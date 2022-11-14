@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import User from 'src/app/types/User';
 import UserComment from 'src/app/types/UserComment';
 
@@ -16,6 +16,9 @@ export class CommentInputComponent {
 
   @Output()
   newCommentEvent = new EventEmitter<UserComment>();
+
+  @ViewChild('commentBox')
+  commentBox!: ElementRef;
 
   textValue: string = ""
   userSearchText: string = ""
@@ -47,5 +50,6 @@ export class CommentInputComponent {
     this.selectedUser = event
     this.userSearchText = ""
     this.textValue = this.textValue.replace(/(@\w{1,})/g, event.name)
+    this.commentBox.nativeElement.focus()
   }
 }
