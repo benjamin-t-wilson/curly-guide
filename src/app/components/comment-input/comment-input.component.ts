@@ -34,6 +34,7 @@ export class CommentInputComponent {
   addComment(comment: UserComment) {
     this.newCommentEvent.emit({ userID: 5, userName: "Sully", text: this.textValue })
     this.textValue = ""
+    this.userSearchText = ""
   }
 
 }
