@@ -1,0 +1,9 @@
+<ul>
+  <!-- In a real production app, it's likely each comment would have it's own component
+    for things like linking to the user's profile, a snowman menu with options to delete, edit, mark as spam etc.
+    Which is why I have broken it out this way, even though they're fairly simple -->
+  <app-comment
+    *ngFor="let comment of comments"
+    [comment]="comment"
+  ></app-comment>
+</ul>
