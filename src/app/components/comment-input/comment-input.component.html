@@ -1,10 +1,10 @@
-<!-- <input
-  type="textarea"
-  [value]="textValue"
-  (input)="updateTextValue($event)"
-/> -->
 <input
   type="textarea"
   [ngModel]="textValue"
   (ngModelChange)="updateTextValue($event)"
 />
+<app-user-search
+  *ngIf="userSearchText"
+  [searchValue]="userSearchText"
+  [users]="users"
+></app-user-search>
