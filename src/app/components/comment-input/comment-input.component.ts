@@ -19,6 +19,7 @@ export class CommentInputComponent {
 
   textValue: string = ""
   userSearchText: string = ""
+  selectedUser: User | undefined;
 
   updateTextValue(value: string) {
     this.textValue = value
@@ -31,10 +32,20 @@ export class CommentInputComponent {
     }
   }
 
-  addComment(comment: UserComment) {
+  addComment() {
     this.newCommentEvent.emit({ userID: 5, userName: "Sully", text: this.textValue })
     this.textValue = ""
     this.userSearchText = ""
+
+    if (this.selectedUser) {
+      window.alert(`User number: ${this.selectedUser.userID}, name: ${this.selectedUser.name} has been tagged in a comment!`)
+      this.selectedUser = undefined
+    }
   }
 
+  userSelectedEvent(event: User) {
+    this.selectedUser = event
+    this.userSearchText = ""
+    this.textValue = this.textValue.replace(/(@\w{1,})/g, event.name)
+  }
 }

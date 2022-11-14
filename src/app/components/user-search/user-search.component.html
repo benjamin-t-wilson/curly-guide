@@ -1,3 +1,5 @@
 <ul>
-  <li *ngFor="let user of possibleTargets">{{ user.name }}</li>
+  <li *ngFor="let user of possibleTargets" (click)="setSelected($event)">
+    {{ user.name }}
+  </li>
 </ul>

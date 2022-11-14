@@ -1,4 +1,4 @@
-<form (ngSubmit)="addComment($event)">
+<form (ngSubmit)="addComment()">
   <input
     type="textarea"
     [ngModel]="textValue"
@@ -10,5 +10,6 @@
     *ngIf="userSearchText"
     [searchValue]="userSearchText"
     [users]="users"
+    (selectedTargetEvent)="userSelectedEvent($event)"
   ></app-user-search>
 </form>
