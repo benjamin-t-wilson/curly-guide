@@ -7,9 +7,15 @@ import { Component } from '@angular/core';
 })
 export class CommentInputComponent {
   textValue: string = ""
+  userSearchText: string = ""
 
   updateTextValue(value: string) {
     this.textValue = value
+    
+    const userSearchRegex = this.textValue.match(/(@\w{1,})/g)
+    if (userSearchRegex) {
+      this.userSearchText = userSearchRegex[0]
+    }
   }
 
 }
