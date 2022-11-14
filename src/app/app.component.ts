@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import UserComment from './types/UserComment';
 
 @Component({
   selector: 'app-root',
@@ -27,4 +28,8 @@ export class AppComponent {
     { userID: 3, name: 'Celia' },
     { userID: 4, name: 'Jerry' },
   ]
+
+  addComment(event: UserComment) {
+    this.comments.push(event)
+  }
 }

@@ -1,2 +1,2 @@
 <app-comment-list [comments]="comments"></app-comment-list>
-<app-comment-input [users]="users"></app-comment-input>
+<app-comment-input [users]="users" (newCommentEvent)="addComment($event)"></app-comment-input>

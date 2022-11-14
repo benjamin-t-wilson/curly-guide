@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import User from 'src/app/types/User';
+import UserComment from 'src/app/types/UserComment';
 
 @Component({
   selector: 'app-comment-input',
@@ -13,6 +14,9 @@ export class CommentInputComponent {
   @Input()
   users: User[] = [];
 
+  @Output()
+  newCommentEvent = new EventEmitter<UserComment>();
+
   textValue: string = ""
   userSearchText: string = ""
 
@@ -25,6 +29,11 @@ export class CommentInputComponent {
     } else {
       this.userSearchText = ""
     }
+  }
+
+  addComment(comment: UserComment) {
+    this.newCommentEvent.emit({ userID: 5, userName: "Sully", text: this.textValue })
+    this.textValue = ""
   }
 
 }
