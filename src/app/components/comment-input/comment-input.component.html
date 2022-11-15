@@ -1,11 +1,12 @@
 <form (ngSubmit)="addComment()">
-  <input
+  <textarea
     type="textarea"
     [ngModel]="textValue"
     (ngModelChange)="updateTextValue($event)"
     name="textValue"
     #commentBox
-  />
+    placeholder="new message..."
+  ></textarea>
   <button type="submit">Send</button>
   <app-user-search
     *ngIf="userSearchText"
