@@ -24,6 +24,10 @@ export class CommentInputComponent {
   userSearchText: string = ""
   selectedUser: User | undefined;
 
+  searchBoxStyle = {
+    left: "0px"
+  }
+
   updateTextValue(value: string) {
     this.textValue = value
 
@@ -51,5 +55,10 @@ export class CommentInputComponent {
     this.userSearchText = ""
     this.textValue = this.textValue.replace(/(@\w{1,})/g, event.name)
     this.commentBox.nativeElement.focus()
+  }
+
+  handleInput(event: any) {
+    let letterOffset = (event.target as HTMLInputElement).selectionStart as number
+    this.searchBoxStyle.left = letterOffset * 10 + "px"
   }
 }

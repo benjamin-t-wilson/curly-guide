@@ -130,8 +130,10 @@ table {
 
 * {
   box-sizing: border-box;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: monospace;
   color: #caccce;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 *:focus {

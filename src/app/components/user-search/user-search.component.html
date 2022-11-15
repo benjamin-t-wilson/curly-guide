@@ -2,4 +2,5 @@
   <li *ngFor="let user of possibleTargets" (click)="setSelected($event)">
     {{ user.name }}
   </li>
+  <li *ngIf="possibleTargets.length === 0">Can't find a user</li>
 </ul>
