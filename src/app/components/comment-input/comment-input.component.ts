@@ -31,8 +31,9 @@ export class CommentInputComponent {
   updateTextValue(value: string) {
     this.textValue = value
 
-    const userSearchRegex = this.textValue.match(/(@\w{1,})/g)
-    if (userSearchRegex) {
+    const userSearchRegex = this.textValue.match(/(@\w{1,})/gm)
+
+    if (userSearchRegex && !this.textValue.match(/(@\w{1,}\s)/gm)) {
       this.userSearchText = userSearchRegex[0]
     } else {
       this.userSearchText = ""

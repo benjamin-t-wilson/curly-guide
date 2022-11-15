@@ -28,8 +28,10 @@ button {
 }
 
 app-user-search {
-    position: absolute;
-    background: black;
-    padding: 3px 15px;
-  }
-  
+  position: absolute;
+  background: #6a717d;
+  padding: 3px 15px;
+  top: -10px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px #111;
+}
